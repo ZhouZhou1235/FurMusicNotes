@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy55s7adwqtg8"]
+
+[ext_resource type="Script" path="res://scripts/PauseGame.gd" id="1_t5eli"]
+[ext_resource type="Texture2D" uid="uid://cjpbciu3uktbv" path="res://assets/img/info.png" id="2_q8nh0"]
+[ext_resource type="AudioStream" uid="uid://bq85i0hvt80vm" path="res://assets/music/hitBack.ogg" id="3_kerh4"]
+[ext_resource type="AudioStream" uid="uid://brep8m44w32xn" path="res://assets/music/success.ogg" id="4_w2li6"]
+[ext_resource type="AudioStream" uid="uid://1sr3cx15e4mt" path="res://assets/music/failed.ogg" id="5_gfodv"]
+
+[node name="PauseGame" type="Control"]
+process_mode = 3
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5eli")
+
+[node name="ColorRect" type="Sprite2D" parent="."]
+position = Vector2(640, 384)
+texture = ExtResource("2_q8nh0")
+
+[node name="Label" type="Label" parent="ColorRect"]
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 44.0
+offset_bottom = -25.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "游戏暂停"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+offset_left = -192.0
+offset_top = 64.0
+offset_right = 95.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "ESC恢复 R离开"
+
+[node name="successMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_w2li6")
+
+[node name="failedMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gfodv")
+
+[node name="hitBack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kerh4")
+
+[connection signal="finished" from="hitBack" to="." method="_on_hit_back_finished"]

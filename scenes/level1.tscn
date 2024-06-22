@@ -1,0 +1,475 @@
+[gd_scene load_steps=39 format=3 uid="uid://d1u5aua1npv8x"]
+
+[ext_resource type="Script" path="res://scripts/level1.gd" id="1_p5w01"]
+[ext_resource type="PackedScene" uid="uid://cy55s7adwqtg8" path="res://scenes/PauseGame.tscn" id="3_0s5bg"]
+[ext_resource type="Texture2D" uid="uid://ccnbsuvbdewb7" path="res://assets/img/level1back1.png" id="3_wostg"]
+[ext_resource type="Texture2D" uid="uid://b4f3niiy4vy8p" path="res://assets/img/info.png" id="4_tef7j"]
+[ext_resource type="AudioStream" uid="uid://dvjjunu7sxpxc" path="res://assets/music/furryMusician.ogg" id="5_8ou0j"]
+[ext_resource type="Texture2D" uid="uid://ddtr1wmvg2d3r" path="res://assets/img/role/zhou/d0.png" id="5_48h38"]
+[ext_resource type="Texture2D" uid="uid://ted8tslqco6f" path="res://assets/img/role/zhou/d1.png" id="6_pl3m0"]
+[ext_resource type="Texture2D" uid="uid://er8e1p3soqdg" path="res://assets/img/role/zhou/d2.png" id="7_nva07"]
+[ext_resource type="Texture2D" uid="uid://brrphw7l0gfmc" path="res://assets/img/success/success0.png" id="8_q3f3i"]
+[ext_resource type="Texture2D" uid="uid://bvb1pys838guh" path="res://assets/img/role/zhou/d3.png" id="8_tymrw"]
+[ext_resource type="Texture2D" uid="uid://cyidcv13yxceg" path="res://assets/img/success/success1.png" id="9_4gpf0"]
+[ext_resource type="Texture2D" uid="uid://dpygj6q70ks7n" path="res://assets/img/role/zhou/as1.png" id="9_bnuce"]
+[ext_resource type="Texture2D" uid="uid://d0e4vx0adqvae" path="res://assets/img/success/success2.png" id="10_5kw5k"]
+[ext_resource type="Texture2D" uid="uid://fpj8s7vvdpq0" path="res://assets/img/role/zhou/as2.png" id="10_d877k"]
+[ext_resource type="Texture2D" uid="uid://drbww71cy7lc5" path="res://assets/img/success/success3.png" id="11_j4xg8"]
+[ext_resource type="Texture2D" uid="uid://dwiud8l1r8731" path="res://assets/img/role/zhou/df1.png" id="11_quqnc"]
+[ext_resource type="Texture2D" uid="uid://csbr2y3n2kk8r" path="res://assets/img/success/success4.png" id="12_8vrdg"]
+[ext_resource type="Texture2D" uid="uid://p8sfoh8ud4sg" path="res://assets/img/role/zhou/df2.png" id="12_leeon"]
+[ext_resource type="Texture2D" uid="uid://dgnr7ea8jxchb" path="res://assets/img/role/zhou/jk1.png" id="13_lrm7s"]
+[ext_resource type="Texture2D" uid="uid://p4fagg5bp2tg" path="res://assets/img/success/success5.png" id="13_orpiw"]
+[ext_resource type="Texture2D" uid="uid://b4jd7xp30joux" path="res://assets/img/role/zhou/jk2.png" id="14_32hi0"]
+[ext_resource type="Texture2D" uid="uid://sio8bidlfqkh" path="res://assets/img/success/success6.png" id="14_qkxb6"]
+[ext_resource type="Texture2D" uid="uid://y5p82xm13e3r" path="res://assets/img/success/success7.png" id="15_bjfhm"]
+[ext_resource type="Texture2D" uid="uid://cy1xw3c6p6f1" path="res://assets/img/role/zhou/l;1.png" id="15_wchfv"]
+[ext_resource type="Texture2D" uid="uid://dw72rtsjklh4w" path="res://assets/img/role/zhou/l;2.png" id="16_14ts0"]
+[ext_resource type="Texture2D" uid="uid://fdk4yg45idk2" path="res://assets/img/success/success8.png" id="16_dohe3"]
+[ext_resource type="Texture2D" uid="uid://baiy6of3eha8n" path="res://assets/img/success/success9.png" id="17_k322i"]
+[ext_resource type="Texture2D" uid="uid://cggepjrtqorpk" path="res://assets/img/success/success10.png" id="18_del55"]
+[ext_resource type="Texture2D" uid="uid://bdixli5svhftt" path="res://assets/img/failed/failed0.png" id="19_g0ut7"]
+[ext_resource type="Texture2D" uid="uid://dg1xwbsc7kofh" path="res://assets/img/failed/failed1.png" id="20_3dylt"]
+[ext_resource type="Texture2D" uid="uid://dl4y0we7lt6uj" path="res://assets/img/failed/failed2.png" id="21_1el4d"]
+[ext_resource type="Texture2D" uid="uid://caw37hypmnnjs" path="res://assets/img/failed/failed3.png" id="22_cxww8"]
+[ext_resource type="Texture2D" uid="uid://c1w8xooaf0xhe" path="res://assets/img/failed/failed4.png" id="23_i6fx7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4k8dp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wostg")
+}],
+"loop": true,
+"name": &"level1",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wqbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_48h38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pl3m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nva07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tymrw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bnuce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d877k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bnuce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d877k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bnuce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d877k")
+}],
+"loop": false,
+"name": &"hit12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_quqnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_leeon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_quqnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_leeon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_quqnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_leeon")
+}],
+"loop": false,
+"name": &"hit34",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_lrm7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_32hi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lrm7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_32hi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lrm7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_32hi0")
+}],
+"loop": false,
+"name": &"hit56",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_wchfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_14ts0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wchfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_14ts0")
+}],
+"loop": false,
+"name": &"hit78",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_48h38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pl3m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nva07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tymrw")
+}],
+"loop": false,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryoxa"]
+size = Vector2(1312, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxsch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_q3f3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4gpf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5kw5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j4xg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8vrdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_orpiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qkxb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bjfhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dohe3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k322i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_del55")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o30kd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_g0ut7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3dylt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1el4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cxww8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_i6fx7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_p5w01")
+
+[node name="levelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8ou0j")
+
+[node name="background" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_4k8dp")
+animation = &"level1"
+
+[node name="role" type="AnimatedSprite2D" parent="."]
+position = Vector2(1050, 384)
+scale = Vector2(1.35638, 1.35638)
+sprite_frames = SubResource("SpriteFrames_2wqbh")
+autoplay = "default"
+
+[node name="levelInfo" type="Sprite2D" parent="."]
+position = Vector2(256, 192)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("4_tef7j")
+
+[node name="information" type="Label" parent="levelInfo"]
+offset_left = -275.0
+offset_top = -175.0
+offset_right = -203.0
+offset_bottom = -125.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "信息"
+
+[node name="line" type="Area2D" parent="."]
+
+[node name="lineBody" type="ColorRect" parent="line"]
+offset_left = -16.0
+offset_top = 664.0
+offset_right = 1296.0
+offset_bottom = 680.0
+color = Color(0.980392, 0.980392, 0.588235, 0.392157)
+
+[node name="keyTip" type="Label" parent="line/lineBody"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = -24.0
+offset_right = 1168.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "A        S        D        F        J        K         L        ;"
+horizontal_alignment = 1
+
+[node name="Score" type="ColorRect" parent="line/lineBody"]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = -640.0
+offset_right = 1272.0
+offset_bottom = -608.0
+color = Color(1, 1, 1, 0.196078)
+
+[node name="theScore" type="Label" parent="line/lineBody/Score"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "得分"
+
+[node name="musicTitle" type="ColorRect" parent="line/lineBody"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -648.0
+offset_right = 416.0
+offset_bottom = -616.0
+color = Color(1, 1, 1, 0.196078)
+
+[node name="title" type="Label" parent="line/lineBody/musicTitle"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "音乐"
+
+[node name="lines" type="Control" parent="line/lineBody"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="line1" type="ColorRect" parent="line/lineBody/lines"]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = -680.0
+offset_right = 272.0
+offset_bottom = 72.0
+color = Color(0.862745, 0.588235, 0.980392, 0.392157)
+
+[node name="line2" type="ColorRect" parent="line/lineBody/lines"]
+visible = false
+layout_mode = 0
+offset_left = 272.0
+offset_top = -680.0
+offset_right = 400.0
+offset_bottom = 72.0
+color = Color(0.784314, 0.588235, 0.980392, 0.392157)
+
+[node name="line3" type="ColorRect" parent="line/lineBody/lines"]
+visible = false
+layout_mode = 0
+offset_left = 400.0
+offset_top = -680.0
+offset_right = 528.0
+offset_bottom = 72.0
+color = Color(0.588235, 0.705882, 0.980392, 0.392157)
+
+[node name="line4" type="ColorRect" parent="line/lineBody/lines"]
+visible = false
+layout_mode = 0
+offset_left = 528.0
+offset_top = -680.0
+offset_right = 656.0
+offset_bottom = 72.0
+color = Color(0.392157, 0.705882, 0.980392, 0.392157)
+
+[node name="line5" type="ColorRect" parent="line/lineBody/lines"]
+visible = false
+layout_mode = 0
+offset_left = 656.0
+offset_top = -680.0
+offset_right = 784.0
+offset_bottom = 72.0
+color = Color(0.862745, 0.588235, 0.980392, 0.392157)
+
+[node name="line6" type="ColorRect" parent="line/lineBody/lines"]
+visible = false
+layout_mode = 0
+offset_left = 784.0
+offset_top = -680.0
+offset_right = 912.0
+offset_bottom = 72.0
+color = Color(0.784314, 0.588235, 0.980392, 0.392157)
+
+[node name="line7" type="ColorRect" parent="line/lineBody/lines"]
+visible = false
+layout_mode = 0
+offset_left = 912.0
+offset_top = -680.0
+offset_right = 1040.0
+offset_bottom = 72.0
+color = Color(0.588235, 0.705882, 0.980392, 0.392157)
+
+[node name="line8" type="ColorRect" parent="line/lineBody/lines"]
+visible = false
+layout_mode = 0
+offset_left = 1040.0
+offset_top = -680.0
+offset_right = 1168.0
+offset_bottom = 72.0
+color = Color(0.392157, 0.705882, 0.980392, 0.392157)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="line"]
+position = Vector2(640, 656)
+shape = SubResource("RectangleShape2D_ryoxa")
+
+[node name="PauseGame" parent="." instance=ExtResource("3_0s5bg")]
+visible = false
+
+[node name="gameEnd" type="Control" parent="."]
+process_mode = 3
+visible = false
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="success" type="ColorRect" parent="gameEnd"]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 1, 1, 0.588235)
+
+[node name="title" type="Label" parent="gameEnd/success"]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 64.0
+offset_right = 744.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "通关"
+
+[node name="successScore" type="Label" parent="gameEnd/success"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 184.0
+offset_right = 612.0
+offset_bottom = 253.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "得分"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gameEnd/success"]
+position = Vector2(648, 488)
+scale = Vector2(0.93, 0.93)
+sprite_frames = SubResource("SpriteFrames_sxsch")
+autoplay = "default"
+frame_progress = 0.207365
+
+[node name="failed" type="ColorRect" parent="gameEnd"]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.980392, 0.784314, 0.705882, 1)
+
+[node name="title" type="Label" parent="gameEnd/failed"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 64.0
+offset_right = 840.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "游戏失败"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gameEnd/failed"]
+position = Vector2(640, 448)
+sprite_frames = SubResource("SpriteFrames_o30kd")
+autoplay = "default"
+
+[connection signal="finished" from="levelMusic" to="." method="_on_level_1_music_finished"]
+[connection signal="animation_finished" from="role" to="." method="_on_role_animation_finished"]
+[connection signal="area_entered" from="line" to="." method="_on_line_area_entered"]
+[connection signal="area_exited" from="line" to="." method="_on_line_area_exited"]
