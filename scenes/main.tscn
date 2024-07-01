@@ -1,0 +1,305 @@
+[gd_scene load_steps=13 format=3 uid="uid://bby7h8ayhj8ad"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_hkoyj"]
+[ext_resource type="Texture2D" uid="uid://bvdpbhrrxas0n" path="res://assets/img/main/furMusicNotes.png" id="1_ht11d"]
+[ext_resource type="AudioStream" uid="uid://uyqdrt57u58p" path="res://assets/music/mainMusic.ogg" id="2_y7ceu"]
+[ext_resource type="SpriteFrames" uid="uid://c7w052yb7otdx" path="res://assets/welcomeFrames.tres" id="4_2eumy"]
+[ext_resource type="SpriteFrames" uid="uid://e6dyre4j5qtd" path="res://assets/preview_unselect.tres" id="6_465y3"]
+[ext_resource type="Texture2D" uid="uid://b7gavmro1s02x" path="res://assets/img/main/exitGame.png" id="8_nf4pe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jw3n8"]
+
+[sub_resource type="Animation" id="Animation_hawne"]
+resource_name = "recover"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logo:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("logoText:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.839216, 0, 1), Color(0, 0.666667, 1, 1), Color(1, 0.521569, 0.521569, 1), Color(1, 0.521569, 0.521569, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uk5ln"]
+_data = {
+"recover": SubResource("Animation_hawne")
+}
+
+[sub_resource type="Animation" id="Animation_i1vsc"]
+resource_name = "handoff"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("back:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1280, 0), Vector2(1280, 720), Vector2(1280, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("back:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.588235, 0.588235, 0.980392, 0), Color(0.588235, 0.588235, 0.980392, 1), Color(0.588235, 0.588235, 0.980392, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w1jg3"]
+resource_name = "selectMusic"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("back:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(1280, 720), Vector2(0, 720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("back:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.980392, 0.980392, 0.588235, 0), Color(0.980392, 0.980392, 0.588235, 1), Color(0.980392, 0.980392, 0.588235, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0rmtp"]
+_data = {
+"handoff": SubResource("Animation_i1vsc"),
+"selectMusic": SubResource("Animation_w1jg3")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hkoyj")
+
+[node name="mainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_y7ceu")
+
+[node name="welcome" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.588235, 0.588235, 0.980392, 1)
+
+[node name="FurMusicNotes" type="Sprite2D" parent="welcome"]
+position = Vector2(394.5, 361)
+scale = Vector2(0.722, 0.722)
+texture = ExtResource("1_ht11d")
+
+[node name="zhou" type="AnimatedSprite2D" parent="welcome"]
+position = Vector2(984, 352)
+scale = Vector2(0.898, 0.898)
+sprite_frames = ExtResource("4_2eumy")
+autoplay = "default"
+
+[node name="enter" type="Label" parent="welcome"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 512.0
+offset_right = 1280.0
+offset_bottom = 722.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "按空格进入游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="version" type="Label" parent="welcome"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "1.0.0"
+
+[node name="menu" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="preview" type="AnimatedSprite2D" parent="menu"]
+position = Vector2(640, 360)
+sprite_frames = ExtResource("6_465y3")
+autoplay = "default"
+
+[node name="musicName" type="Label" parent="menu"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 464.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "毛绒音符"
+
+[node name="worker" type="Label" parent="menu"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 164.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Fur Music Notes"
+
+[node name="musicInfo" type="Label" parent="menu"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 288.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "		上下选择 回车开始
+		按键说明
+		下一步：回车 空格
+		选择：上下键 W S
+		切换难度：Q
+		唤起菜单：ESC
+		演奏：ASDFJKL; 或 QWERUIOP
+		全屏切换：F11"
+
+[node name="difficulty" type="Label" parent="menu"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 577.0
+offset_right = 1060.0
+offset_bottom = 646.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "难度 正常"
+
+[node name="exitGame" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 384)
+texture = ExtResource("8_nf4pe")
+
+[node name="sure" type="Label" parent="exitGame"]
+offset_left = -256.0
+offset_top = -64.0
+offset_right = 194.0
+offset_bottom = 5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "真的要退出吗？"
+
+[node name="CanvasLogo" type="CanvasLayer" parent="."]
+
+[node name="logo" type="ColorRect" parent="CanvasLogo"]
+material = SubResource("ShaderMaterial_jw3n8")
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="logoText" type="Label" parent="CanvasLogo"]
+offset_left = 424.0
+offset_top = 328.0
+offset_right = 849.0
+offset_bottom = 379.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "PINKCANDYZHOU作品"
+
+[node name="logoAnimation" type="AnimationPlayer" parent="CanvasLogo"]
+libraries = {
+"": SubResource("AnimationLibrary_uk5ln")
+}
+
+[node name="CanvasHandoff" type="CanvasLayer" parent="."]
+
+[node name="back" type="ColorRect" parent="CanvasHandoff"]
+offset_right = 1280.0
+color = Color(0.588235, 0.588235, 0.980392, 0)
+
+[node name="handoffAnimation" type="AnimationPlayer" parent="CanvasHandoff"]
+libraries = {
+"": SubResource("AnimationLibrary_0rmtp")
+}
+
+[node name="phoneButton" type="GridContainer" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = 688.0
+offset_top = 64.0
+offset_right = 1219.0
+offset_bottom = 123.0
+columns = 5
+
+[node name="Button_esc" type="Button" parent="phoneButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "ESC"
+
+[node name="Button_enter" type="Button" parent="phoneButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Enter"
+
+[node name="Button_up" type="Button" parent="phoneButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "向上"
+
+[node name="Button_down" type="Button" parent="phoneButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "向下"
+
+[node name="Button_q" type="Button" parent="phoneButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Q键"
+
+[connection signal="finished" from="mainMusic" to="." method="_on_main_music_finished"]
+[connection signal="animation_finished" from="CanvasLogo/logoAnimation" to="." method="_on_logo_animation_animation_finished"]
+[connection signal="button_down" from="phoneButton/Button_esc" to="." method="_on_button_esc_button_down"]
+[connection signal="button_down" from="phoneButton/Button_enter" to="." method="_on_button_enter_button_down"]
+[connection signal="button_down" from="phoneButton/Button_up" to="." method="_on_button_up_button_down"]
+[connection signal="button_down" from="phoneButton/Button_down" to="." method="_on_button_down_button_down"]
+[connection signal="button_down" from="phoneButton/Button_q" to="." method="_on_button_q_button_down"]

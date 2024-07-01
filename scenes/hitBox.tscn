@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2ymg0fo0k4ct"]
+
+[ext_resource type="Script" path="res://scripts/hitBox.gd" id="1_jpod3"]
+[ext_resource type="Texture2D" uid="uid://bto0caa4o73la" path="res://assets/img/level/hitBox.png" id="2_j8df3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqm46"]
+size = Vector2(96, 96)
+
+[sub_resource type="Curve" id="Curve_2amwx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_pitlo"]
+colors = PackedColorArray(0.588235, 0.980392, 0.588235, 0.392157, 1, 1, 1, 1)
+
+[node name="HitBox" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_jpod3")
+
+[node name="body" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lqm46")
+
+[node name="longNote" type="ColorRect" parent="body"]
+visible = false
+offset_left = -32.0
+offset_top = -112.0
+offset_right = 32.0
+offset_bottom = -48.0
+
+[node name="appearance" type="Sprite2D" parent="body"]
+position = Vector2(-5.72205e-06, -5.72205e-06)
+scale = Vector2(0.256, 0.256)
+texture = ExtResource("2_j8df3")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="body"]
+position = Vector2(-3.8147e-06, -224)
+scale = Vector2(5.6, 28)
+enable_node_path = NodePath("../..")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="body"]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 500.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_2amwx")
+
+[node name="exactParticles" type="CPUParticles2D" parent="body"]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_2amwx")
+color_ramp = SubResource("Gradient_pitlo")
+
+[node name="mouseHit" type="Button" parent="."]
+visible = false
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+flat = true
+
+[connection signal="screen_exited" from="body/VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[connection signal="finished" from="body/CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
+[connection signal="button_down" from="mouseHit" to="." method="_on_mouse_hit_button_down"]
