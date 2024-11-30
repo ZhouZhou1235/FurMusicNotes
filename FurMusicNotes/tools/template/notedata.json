@@ -1,0 +1,12 @@
+{
+    "music":"untitled music",
+    "speed":500,
+    "bpm":120,
+    "notes":[
+        {
+            "time":0,
+            "key":1,
+            "long":0
+        }
+    ]
+}

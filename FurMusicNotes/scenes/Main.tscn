@@ -1,0 +1,1148 @@
+[gd_scene load_steps=40 format=3 uid="uid://d1jd6lpk51vfh"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_bdeh6"]
+[ext_resource type="Script" path="res://scenes/Begin.gd" id="2_kmwev"]
+[ext_resource type="Script" path="res://scenes/Play.gd" id="3_3jj5t"]
+[ext_resource type="Texture2D" uid="uid://dqvdesau5tmm4" path="res://assets/images/zhou_play_music.png" id="3_5wwfm"]
+[ext_resource type="Texture2D" uid="uid://pmo18y3e88ed" path="res://assets/images/pinkcandy.png" id="3_g4lxa"]
+[ext_resource type="Texture2D" uid="uid://tcorvgcfboju" path="res://assets/images/furMusicNotes.png" id="3_g65gu"]
+[ext_resource type="AudioStream" uid="uid://ctaime8v6odab" path="res://assets/music/mainMusic.ogg" id="4_xqna8"]
+[ext_resource type="AudioStream" uid="uid://y16dbbnitbmp" path="res://assets/sounds/introReady.ogg" id="5_7qucq"]
+[ext_resource type="AudioStream" uid="uid://brgbkmlab1e5o" path="res://assets/sounds/introGo.ogg" id="6_dcuut"]
+[ext_resource type="Script" path="res://scenes/PauseOption.gd" id="7_gp1ji"]
+[ext_resource type="Texture2D" uid="uid://bu4xyc4f0uc15" path="res://assets/images/hitbest.svg" id="8_xksv5"]
+[ext_resource type="Texture2D" uid="uid://divjobicjrylk" path="res://assets/images/hitgreat.svg" id="9_u3756"]
+[ext_resource type="Texture2D" uid="uid://d2r4gka84tm3j" path="res://assets/images/hitgood.svg" id="10_w7qs6"]
+[ext_resource type="Texture2D" uid="uid://bxh1l4km86jgn" path="res://assets/images/hitok.svg" id="11_1spk4"]
+[ext_resource type="Texture2D" uid="uid://by3exnuqbb4w3" path="res://assets/images/hitmiss.svg" id="12_7ljuo"]
+[ext_resource type="Animation" uid="uid://bnpe6fs1u7gmf" path="res://assets/animate/guide.res" id="13_ooq1j"]
+
+[sub_resource type="Theme" id="Theme_hg6y6"]
+default_font_size = 24
+
+[sub_resource type="Theme" id="Theme_0rr34"]
+default_font_size = 18
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mws0w"]
+
+[sub_resource type="Animation" id="Animation_w83om"]
+resource_name = "musicTitleMove"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MusicTitle:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(464, 320), Vector2(464, 312), Vector2(464, 320)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ks4b1"]
+_data = {
+"musicTitleMove": SubResource("Animation_w83om")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awb5p"]
+
+[sub_resource type="Animation" id="Animation_frt7l"]
+resource_name = "choosePackage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SelectPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.025, 0.475),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.95)]
+}
+
+[sub_resource type="Animation" id="Animation_d788j"]
+resource_name = "enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1152, 576), Vector2(192, 192)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 64), Vector2(1088, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WelcomeText:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 640), Vector2(0, 720)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SelectPackage:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SelectPanel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pb5h4"]
+resource_name = "exit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Exit/Back:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.784314)]
+}
+
+[sub_resource type="Animation" id="Animation_s44hw"]
+resource_name = "star"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SelectPanel/HitCount/Star:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.327865, 0.768453, 0.437137, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ejyeh"]
+resource_name = "star2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SelectPanel/HitCount/Star:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.349559, 0.729347, 0.769714, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v08l0"]
+resource_name = "star3"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SelectPanel/HitCount/Star:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.324011, 0.730669, 0.786174, 1), Color(0.736892, 0.63415, 0.865746, 1), Color(0.797403, 0.613611, 0.506657, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_guw5n"]
+_data = {
+"choosePackage": SubResource("Animation_frt7l"),
+"enter": SubResource("Animation_d788j"),
+"exit": SubResource("Animation_pb5h4"),
+"star1": SubResource("Animation_s44hw"),
+"star2": SubResource("Animation_ejyeh"),
+"star3": SubResource("Animation_v08l0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj2fn"]
+size = Vector2(1216, 128)
+
+[sub_resource type="Animation" id="Animation_1l888"]
+resource_name = "hitNote"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountPanel/HitBest:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -8), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_esar4"]
+resource_name = "hitnote_good"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountPanel/HitGood:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(128, 0), Vector2(128, -8), Vector2(128, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lpim8"]
+resource_name = "hitnote_great"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountPanel/HitGreat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(64, 0), Vector2(64, -8), Vector2(64, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ybkj3"]
+resource_name = "hitnote_miss"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountPanel/HitMiss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(256, 0), Vector2(256, -8), Vector2(256, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d7gu7"]
+resource_name = "hitnote_ok"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountPanel/HitOK:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(192, 0), Vector2(192, -8), Vector2(192, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7qjg"]
+_data = {
+"hitnote_best": SubResource("Animation_1l888"),
+"hitnote_good": SubResource("Animation_esar4"),
+"hitnote_great": SubResource("Animation_lpim8"),
+"hitnote_miss": SubResource("Animation_ybkj3"),
+"hitnote_ok": SubResource("Animation_d7gu7")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eu4i1"]
+_data = {
+"guide": ExtResource("13_ooq1j")
+}
+
+[sub_resource type="Animation" id="Animation_scpc3"]
+resource_name = "pause"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseOption/Back:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.784314)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mr4cp"]
+_data = {
+"pause": SubResource("Animation_scpc3")
+}
+
+[node name="Main" type="Node"]
+script = ExtResource("1_bdeh6")
+
+[node name="Begin" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kmwev")
+
+[node name="Back" type="ColorRect" parent="Begin"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.192655, 0.231694, 0.271754, 1)
+
+[node name="WelcomeText" type="Label" parent="Begin"]
+layout_mode = 0
+offset_top = 640.0
+offset_right = 1280.0
+offset_bottom = 704.0
+theme_override_font_sizes/font_size = 36
+text = "按任意键进入游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectPackage" type="ReferenceRect" parent="Begin"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 640.0
+
+[node name="Label" type="Label" parent="Begin/SelectPackage"]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 36
+text = "选择音乐包"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoImage" type="TextureRect" parent="Begin/SelectPackage"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 256.0
+offset_right = 1152.0
+offset_bottom = 576.0
+texture = ExtResource("3_5wwfm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Info" type="RichTextLabel" parent="Begin/SelectPackage"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 64.0
+offset_right = 896.0
+offset_bottom = 256.0
+theme = SubResource("Theme_hg6y6")
+text = "2.0.0"
+
+[node name="PackageList" type="ItemList" parent="Begin/SelectPackage"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 24
+
+[node name="Web" type="HBoxContainer" parent="Begin/SelectPackage"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 512.0
+offset_right = 705.0
+offset_bottom = 576.0
+
+[node name="PINKCANDY" type="LinkButton" parent="Begin/SelectPackage/Web"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "粉糖粒子"
+underline = 1
+uri = "https://pinkcandy.top"
+
+[node name="Github" type="LinkButton" parent="Begin/SelectPackage/Web"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Github"
+underline = 1
+uri = "https://github.com/ZhouZhou1235"
+
+[node name="TextureRect" type="TextureRect" parent="Begin/SelectPackage"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 448.0
+offset_right = 592.0
+offset_bottom = 512.0
+texture = ExtResource("3_g4lxa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SelectPanel" type="ReferenceRect" parent="Begin"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = SubResource("Theme_0rr34")
+
+[node name="Preview" type="TextureRect" parent="Begin/SelectPanel"]
+self_modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PackageInfo" type="Label" parent="Begin/SelectPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 448.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 24
+text = "音乐包信息"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicList" type="ItemList" parent="Begin/SelectPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 448.0
+offset_bottom = 640.0
+
+[node name="MusicTitle" type="Label" parent="Begin/SelectPanel"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 320.0
+offset_right = 1216.0
+offset_bottom = 384.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 48
+text = "毛绒音符"
+vertical_alignment = 1
+
+[node name="MusicInfo" type="RichTextLabel" parent="Begin/SelectPanel"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 384.0
+offset_right = 1216.0
+offset_bottom = 512.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "选择曲目......"
+
+[node name="HitCount" type="ReferenceRect" parent="Begin/SelectPanel"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 256.0
+offset_right = 1216.0
+offset_bottom = 576.0
+
+[node name="Score" type="Label" parent="Begin/SelectPanel/HitCount"]
+layout_mode = 2
+offset_left = 176.0
+offset_right = 304.0
+offset_bottom = 64.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 36
+text = "分数"
+vertical_alignment = 1
+
+[node name="Star" type="Label" parent="Begin/SelectPanel/HitCount"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "评星"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountPanel" type="Panel" parent="Begin/SelectPanel/HitCount"]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 320.0
+offset_bottom = 321.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mws0w")
+
+[node name="HitBest" type="Control" parent="Begin/SelectPanel/HitCount/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Begin/SelectPanel/HitCount/CountPanel/HitBest"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("8_xksv5")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Begin/SelectPanel/HitCount/CountPanel/HitBest"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "hitbest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitGreat" type="Control" parent="Begin/SelectPanel/HitCount/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Begin/SelectPanel/HitCount/CountPanel/HitGreat"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("9_u3756")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Begin/SelectPanel/HitCount/CountPanel/HitGreat"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "hitgreat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitGood" type="Control" parent="Begin/SelectPanel/HitCount/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Begin/SelectPanel/HitCount/CountPanel/HitGood"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("10_w7qs6")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Begin/SelectPanel/HitCount/CountPanel/HitGood"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 65.0
+text = "hitgood"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitOK" type="Control" parent="Begin/SelectPanel/HitCount/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Begin/SelectPanel/HitCount/CountPanel/HitOK"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("11_1spk4")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Begin/SelectPanel/HitCount/CountPanel/HitOK"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 65.0
+text = "hitok"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitMiss" type="Control" parent="Begin/SelectPanel/HitCount/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Begin/SelectPanel/HitCount/CountPanel/HitMiss"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("12_7ljuo")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Begin/SelectPanel/HitCount/CountPanel/HitMiss"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 65.0
+text = "hitmiss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="Begin/SelectPanel"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 576.0
+offset_right = 1024.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 36
+text = "开始演奏"
+
+[node name="SelectAnimate" type="AnimationPlayer" parent="Begin/SelectPanel"]
+libraries = {
+"": SubResource("AnimationLibrary_ks4b1")
+}
+
+[node name="Logo" type="TextureRect" parent="Begin"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 640.0
+texture = ExtResource("3_g65gu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Exit" type="Panel" parent="Begin"]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_awb5p")
+
+[node name="Back" type="ColorRect" parent="Begin/Exit"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Option" type="Label" parent="Begin/Exit"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 896.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 48
+text = "确定离开毛绒音符?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelBtn" type="Button" parent="Begin/Exit/Option"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 384.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 24
+text = "再听一会"
+
+[node name="RechooseBtn" type="Button" parent="Begin/Exit/Option"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 384.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 24
+text = "重选音乐包"
+
+[node name="ExitBtn" type="Button" parent="Begin/Exit/Option"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 256.0
+offset_right = 385.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 24
+text = "离开"
+
+[node name="ClearExitBtn" type="Button" parent="Begin/Exit/Option"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 320.0
+offset_right = 384.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 24
+text = "清空记录并离开"
+
+[node name="Hall" type="AudioStreamPlayer" parent="Begin"]
+stream = ExtResource("4_xqna8")
+
+[node name="Animate" type="AnimationPlayer" parent="Begin"]
+libraries = {
+"": SubResource("AnimationLibrary_guw5n")
+}
+
+[node name="Play" type="Node2D" parent="."]
+visible = false
+script = ExtResource("3_3jj5t")
+
+[node name="Back" type="ColorRect" parent="Play"]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.0740505, 0.131125, 0.160503, 1)
+
+[node name="FurMusicNotes" type="Sprite2D" parent="Play"]
+self_modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(640, 384)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("3_g65gu")
+
+[node name="JudgmentArea" type="Area2D" parent="Play"]
+
+[node name="Shape" type="CollisionShape2D" parent="Play/JudgmentArea"]
+position = Vector2(640, 576)
+shape = SubResource("RectangleShape2D_sj2fn")
+
+[node name="JudgeLine" type="Line2D" parent="Play/JudgmentArea"]
+points = PackedVector2Array(64, 576, 1216, 576)
+width = 5.0
+default_color = Color(1, 1, 1, 0.392157)
+
+[node name="Notes" type="Node2D" parent="Play"]
+
+[node name="Guide" type="ReferenceRect" parent="Play"]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 640.0
+
+[node name="Dividers" type="Node2D" parent="Play/Guide"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(64, 64)
+scale = Vector2(1, 1e-05)
+
+[node name="Divider1" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(-64, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Divider2" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(64, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Divider3" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(192, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Divider4" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(320, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Divider5" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(448, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Divider6" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(576, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Divider7" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(704, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Divider8" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(832, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Divider9" type="Line2D" parent="Play/Guide/Dividers"]
+position = Vector2(960, -64)
+points = PackedVector2Array(64, 64, 64, 448)
+width = 3.0
+
+[node name="Keys" type="Control" parent="Play/Guide"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchor_left = 0.056
+anchor_top = 0.667
+anchor_right = 0.942
+anchor_bottom = 0.891
+offset_left = -0.512001
+offset_top = -0.192017
+offset_right = 2.81592
+offset_bottom = -1.216
+
+[node name="Key1" type="Label" parent="Play/Guide/Keys"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 129.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key2" type="Label" parent="Play/Guide/Keys"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 256.0
+offset_bottom = 129.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key3" type="Label" parent="Play/Guide/Keys"]
+layout_mode = 0
+offset_left = 257.0
+offset_right = 385.0
+offset_bottom = 129.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key4" type="Label" parent="Play/Guide/Keys"]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 512.0
+offset_bottom = 129.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key5" type="Label" parent="Play/Guide/Keys"]
+layout_mode = 0
+offset_left = 512.0
+offset_right = 640.0
+offset_bottom = 129.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key6" type="Label" parent="Play/Guide/Keys"]
+layout_mode = 0
+offset_left = 640.0
+offset_right = 768.0
+offset_bottom = 129.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "K"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key7" type="Label" parent="Play/Guide/Keys"]
+layout_mode = 0
+offset_left = 768.0
+offset_right = 896.0
+offset_bottom = 129.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key8" type="Label" parent="Play/Guide/Keys"]
+layout_mode = 0
+offset_left = 896.0
+offset_right = 1024.0
+offset_bottom = 129.0
+theme_override_colors/font_outline_color = Color(0.784314, 0.784314, 0.980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = ";"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartPace" type="Label" parent="Play"]
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 64
+text = "起步节奏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PaceReady" type="AudioStreamPlayer" parent="Play/StartPace"]
+stream = ExtResource("5_7qucq")
+
+[node name="PaceGo" type="AudioStreamPlayer" parent="Play/StartPace"]
+stream = ExtResource("6_dcuut")
+
+[node name="MusicInfo" type="Label" parent="Play"]
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 1024.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "音乐信息"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountPanel" type="Panel" parent="Play"]
+modulate = Color(1, 1, 1, 0.588235)
+offset_left = 480.0
+offset_top = 608.0
+offset_right = 800.0
+offset_bottom = 673.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mws0w")
+
+[node name="HitBest" type="Control" parent="Play/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Play/CountPanel/HitBest"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("8_xksv5")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Play/CountPanel/HitBest"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "hitbest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitGreat" type="Control" parent="Play/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Play/CountPanel/HitGreat"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("9_u3756")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Play/CountPanel/HitGreat"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "hitgreat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitGood" type="Control" parent="Play/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Play/CountPanel/HitGood"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("10_w7qs6")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Play/CountPanel/HitGood"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 65.0
+text = "hitgood"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitOK" type="Control" parent="Play/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Play/CountPanel/HitOK"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("11_1spk4")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Play/CountPanel/HitOK"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 65.0
+text = "hitok"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitMiss" type="Control" parent="Play/CountPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+
+[node name="Icon" type="TextureRect" parent="Play/CountPanel/HitMiss"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+texture = ExtResource("12_7ljuo")
+expand_mode = 1
+
+[node name="Num" type="Label" parent="Play/CountPanel/HitMiss"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 65.0
+text = "hitmiss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="Play"]
+
+[node name="Animate" type="AnimationPlayer" parent="Play"]
+libraries = {
+"": SubResource("AnimationLibrary_p7qjg")
+}
+
+[node name="GuideAnimate" type="AnimationPlayer" parent="Play"]
+libraries = {
+"": SubResource("AnimationLibrary_eu4i1")
+}
+
+[node name="PauseOption" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("7_gp1ji")
+
+[node name="Back" type="ColorRect" parent="PauseOption"]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0)
+
+[node name="Option" type="Label" parent="PauseOption"]
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 896.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 48
+text = "暂停选项"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueBtn" type="Button" parent="PauseOption/Option"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 384.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 24
+text = "继续"
+
+[node name="EndBtn" type="Button" parent="PauseOption/Option"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 384.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 24
+text = "离开"
+
+[node name="Animate" type="AnimationPlayer" parent="PauseOption"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_mr4cp")
+}
+
+[connection signal="item_activated" from="Begin/SelectPackage/PackageList" to="Begin" method="_on_package_list_item_activated"]
+[connection signal="item_selected" from="Begin/SelectPanel/MusicList" to="Begin" method="_on_music_list_item_selected"]
+[connection signal="button_down" from="Begin/SelectPanel/Start" to="." method="_on_start_button_down"]
+[connection signal="pressed" from="Begin/Exit/Option/CancelBtn" to="Begin" method="_on_cancel_btn_pressed"]
+[connection signal="pressed" from="Begin/Exit/Option/RechooseBtn" to="Begin" method="_on_rechoose_btn_pressed"]
+[connection signal="pressed" from="Begin/Exit/Option/ExitBtn" to="Begin" method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="Begin/Exit/Option/ClearExitBtn" to="Begin" method="_on_clear_exit_btn_pressed"]
+[connection signal="finished" from="Begin/Hall" to="Begin" method="_on_hall_finished"]
+[connection signal="body_entered" from="Play/JudgmentArea" to="Play" method="_on_judgment_area_body_entered"]
+[connection signal="body_exited" from="Play/JudgmentArea" to="Play" method="_on_judgment_area_body_exited"]
+[connection signal="finished" from="Play/Music" to="." method="_on_music_finished"]
+[connection signal="pressed" from="PauseOption/Option/ContinueBtn" to="PauseOption" method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="PauseOption/Option/EndBtn" to="." method="_on_end_btn_pressed"]

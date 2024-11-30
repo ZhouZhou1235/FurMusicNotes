@@ -1,0 +1,198 @@
+[gd_scene load_steps=9 format=3 uid="uid://u56sh48ernas"]
+
+[ext_resource type="Script" path="res://scenes/Note.gd" id="1_gi80q"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_77t4p"]
+b = Vector2(96, 0)
+
+[sub_resource type="Curve" id="Curve_dt5lc"]
+_data = [Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_hk5bd"]
+resource_name = "accuracy_best"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Accuracy:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, -64), Vector2(-80, -128)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Accuracy:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Accuracy:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.932907, 0.66101, 0.531298, 1), Color(0.902189, 0.739106, 0.380669, 1), Color(0.229805, 0.76464, 0.609669, 1), Color(0.332886, 0.862495, 0.977683, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a1m8f"]
+resource_name = "accuracy_good"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Accuracy:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, -64), Vector2(-32, -96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Accuracy:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.932907, 0.66101, 0.531298, 1), Color(0.902189, 0.739106, 0.380669, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xpfyw"]
+resource_name = "accuracy_great"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Accuracy:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, -64), Vector2(-80, -128)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Accuracy:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Accuracy:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.932907, 0.66101, 0.531298, 1), Color(0.902189, 0.739106, 0.380669, 1), Color(0.229805, 0.76464, 0.609669, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j3ksa"]
+resource_name = "accuracy_ok"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Accuracy:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, -64), Vector2(-32, -96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Accuracy:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.932907, 0.66101, 0.531298, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oehor"]
+_data = {
+"accuracy_best": SubResource("Animation_hk5bd"),
+"accuracy_good": SubResource("Animation_a1m8f"),
+"accuracy_great": SubResource("Animation_xpfyw"),
+"accuracy_ok": SubResource("Animation_j3ksa")
+}
+
+[node name="Note" type="RigidBody2D"]
+script = ExtResource("1_gi80q")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_77t4p")
+
+[node name="Appearance" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 96, 0)
+
+[node name="VisibleRect" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(48, 1.90735e-06)
+scale = Vector2(4.8, 3.2)
+
+[node name="Particle" type="CPUParticles2D" parent="."]
+position = Vector2(48, 0)
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(48, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 250.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_dt5lc")
+
+[node name="Accuracy" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 128.0
+offset_bottom = -32.0
+theme_override_colors/font_color = Color(0.932907, 0.66101, 0.531298, 1)
+theme_override_font_sizes/font_size = 36
+text = "accuracy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Animate" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oehor")
+}
+
+[connection signal="screen_exited" from="VisibleRect" to="." method="_on_visible_rect_screen_exited"]
+[connection signal="finished" from="Particle" to="." method="_on_particle_finished"]
