@@ -1,12 +1,46 @@
 # 毛绒音符
-## 粉糖粒子周周制作的一款音乐游戏
-![furMusicNotes](https://github.com/ZhouZhou1235/FurMusicNotes/assets/151345772/2c6f19b8-506e-49ef-a9e9-bb1c5f4d2a24)
+## 周周编写的音乐游戏
 
-## 玩法
-- 玩家操作按键 A S D F J K L ;
-- 音符盒接近线时按下对应按键消除
+## 版本 2.0.0
 
-## 作者
-- 国内 QQ1479499289
-- 国外 twitter @zhouzhou1235
-- 粉糖粒子 https://pinkcandy.top
+### 玩法操作
+听音乐的节奏消除音符
+视听美妙的音乐！
+- 按键
+消除音符从左到右按键依次为 A S D F J K L ;
+全屏切换 F11
+音轨提示 空格
+- 音符
+白色是短音 按一次消除
+蓝色是长音 按住连续消除
+透明紫色是引导音符 自动消除
+
+### 资源说明
+- userdata 资源文件夹
+- play 游玩记录
+- musicPackages 音乐包
+关于音乐包
+毛绒音符音乐包的结构：
+packageName 音乐包文件夹
+    index.json 包索引
+    music1 曲目1
+        music.ogg ogg格式音频
+        notedata.json 曲谱
+        preview.png 预览背景图
+    music2 曲目2
+    ...
+将这样的文件夹放入 userdata/musicPackages 下即完成音乐包的导入
+
+### 许可
+此游戏是开放免费的 使用下面的许可
+使用自由：可以对游戏进行游玩、复制、修改、传播等用途
+署名：标注游戏的原始作者
+非营利：必须免费提供，不能商用。
+不封闭：若修改了游戏并发布，代码应公开，不能闭源。
+（许可不包含除“毛绒音符”外的音乐包）
+
+### 作者
+粉糖粒子周周
+QQ1479499289
+pinkcandyzhou@qq.com
+github ZhouZhou1235
