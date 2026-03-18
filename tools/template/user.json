@@ -1,0 +1,23 @@
+{
+    "username":null,
+    "name":"player",
+    "packages":[
+        {
+            "package":"untitled package",
+            "musicList":[
+                {
+                    "title":"",
+                    "hitCount":{
+                        "best":0,
+                        "great":0,
+                        "good":0,
+                        "ok":0,
+                        "miss":0
+                    },
+                    "score":0,
+                    "star":0
+                }
+            ]
+        }
+    ]
+}
